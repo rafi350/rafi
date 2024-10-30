@@ -1,0 +1,47 @@
+#include <iostream>
+using namespace std;
+
+void konversiCelsiusKeFahrenheit() {
+    double celsius;
+    cout << "Masukkan suhu dalam Celsius: ";
+    cin >> celsius;
+    double fahrenheit = (celsius * 9/5) + 32;
+    cout << celsius << " °C = " << fahrenheit << " °F" << endl;
+}
+
+void konversiFahrenheitKeCelsius() {
+    double fahrenheit;
+    cout << "Masukkan suhu dalam Fahrenheit: ";
+    cin >> fahrenheit;
+    double celsius = (fahrenheit - 32) * 5/9;
+    cout << fahrenheit << " °F = " << celsius << " °C" << endl;
+}
+
+int main() {
+    int pilihan;
+    do {
+        cout << "Kalkulator Suhu" << endl;
+        cout << "1. Konversi Celsius ke Fahrenheit" << endl;
+        cout << "2. Konversi Fahrenheit ke Celsius" << endl;
+        cout << "3. Keluar" << endl;
+        cout << "Pilih opsi (1/2/3): ";
+        cin >> pilihan;
+
+        switch (pilihan) {
+            case 1:
+                konversiCelsiusKeFahrenheit();
+                break;
+            case 2:
+                konversiFahrenheitKeCelsius();
+                break;
+            case 3:
+                cout << "Terima kasih! Selamat tinggal." << endl;
+                break;
+            default:
+                cout << "Pilihan tidak valid. Silakan coba lagi." << endl;
+        }
+        cout << endl;
+    } while (pilihan != 3);
+
+    return 0;
+}
